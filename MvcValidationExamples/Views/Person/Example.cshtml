@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Example";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Example</h2>
+
+<button id="myButton">Click Me</button>
+
+<div id="TextBoxExampleDiv" style="display:none;" title="Code Sample">
+<pre>
+    &#64;Html.LabelFor(model => model.TextBoxExample)
+    <dd>&#64;Html.EditorFor(model => model.TextBoxExample) </dd>
+
+</pre>
+</div>
+@section ScriptSection {
+<script type="text/javascript" language="javascript">
+
+    $(document).ready(function () {
+        $("#myButton").bind("click", function (event) {
+            event.preventDefault();
+            $("#TextBoxExampleDiv").dialog().load("/Person/Loader");
+
+        });
+
+    });
+</script>
+}

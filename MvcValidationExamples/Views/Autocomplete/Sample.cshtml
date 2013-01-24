@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Sample";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Sample</h2>
+
+<div class="ui-widget">
+	<label for="myTextbox">Languages: </label>
+	<input id="myTextbox" />
+</div>
+
+<div class="ui-widget" style="margin-top:2em; font-family:Arial">
+	Result:
+	<div id="log" style="height: 200px; width: 300px; overflow: auto;" class="ui-widget-content"></div>
+</div>
+
+@section ScriptSection {
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var availableTags = [
+			    "ActionScript",
+			    "AppleScript",
+			    "Asp",
+			    "BASIC",
+			    "C",
+			    "C++",
+			    "Clojure",
+			    "COBOL",
+			    "ColdFusion",
+			    "Erlang",
+			    "Fortran",
+			    "Groovy",
+			    "Haskell",
+			    "Java",
+			    "JavaScript",
+			    "Lisp",
+			    "Perl",
+			    "PHP",
+			    "Python",
+			    "Ruby",
+			    "Scala",
+			    "Scheme"
+		    ];
+
+            $("#myTextbox").autocomplete({
+                source: availableTags
+            });
+
+        });
+    </script>
+}
