@@ -21,7 +21,7 @@ namespace MvcValidationExamples.Controllers
             return View();
         }
 
-        public ActionResult GetLanguages()
+        public ActionResult GetLanguages(string term)
         {
             string[] availableTags = new string[22] { "ActionScript",
 			"AppleScript",
@@ -45,7 +45,9 @@ namespace MvcValidationExamples.Controllers
 			"Ruby",
 			"Scala",
 			"Scheme" };
-            return Json(availableTags, JsonRequestBehavior.AllowGet);
+            var filteredResults = availableTags.Where(t => t.StartsWith(term)).ToArray();
+            //return Json(availableTags, JsonRequestBehavior.AllowGet);
+            return Json(filteredResults, JsonRequestBehavior.AllowGet);
         }
 
     }

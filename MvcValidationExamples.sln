@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcValidationExamples", "MvcValidationExamples\MvcValidationExamples.csproj", "{8DD01BB3-8B3C-4ED0-A6AF-6042D59C5170}"
 EndProject
 Global

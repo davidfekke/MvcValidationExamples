@@ -22,6 +22,12 @@ namespace MvcValidationExamples
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                "AutoComplete", // Route name
+                "Autocomplete/{action}/{term}", // URL with parameters
+                new { controller = "Autocomplete", action = "Index", term = UrlParameter.Optional } // Parameter defaults
+            );
+
+            routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
