@@ -18,10 +18,25 @@
 
 @section ScriptSection {
     <script type="text/javascript">
-        $(document).ready(function () {
 
+        $(document).ready(function () {
+           
             $("myTextbox").autocomplete({
-                source: '@Url.Action("GetLanguages")'
+                source: function (request, response) {
+                    // define a function to call your Action (assuming UserController)
+                    $.ajax({
+                        url: '/Autocomplete/GetLanguages', type: "POST", dataType: "json",
+
+                        // query will be the param used by your action method
+                        data: { term: request.term },
+                        success: function (data) {
+                            response($.map(data, function (item) {
+                                return { id:item, label: item, value: item };
+                            }))
+                        }
+                    })
+                },
+                minLength: 1
             });
         });
     </script>
