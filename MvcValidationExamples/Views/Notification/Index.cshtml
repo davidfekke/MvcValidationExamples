@@ -12,13 +12,34 @@
 }
 
 @section ScriptSection {
-    <script src="@Url.Content("~/Scripts/jquery.jgrowl_minimized.js")" type="text/javascript"></script>
+    
+    <script src="@Url.Content("~/Scripts/jquery.noty.js")"></script>
+    <script src="@Url.Content("~/Scripts/layouts/center.js")"></script>
+    <script src="@Url.Content("~/Scripts/themes/default.js")"></script>
     <script type="text/javascript">
         
         $("#notificationButton").bind("click", function (event) {
             event.preventDefault();
-            $.jGrowl("Your buton was pushed!");
+
+            var warning = generate('warning');
+            $.noty.setText(warning.options.id, "Your buton was pushed!");
+            setTimeout(function () {
+                $.noty.close(warning.options.id);
+            }, 8000);
         });
+
+        function generate(type) {
+            var n = noty({
+                text: type,
+                type: type,
+                dismissQueue: false,
+                layout: 'center',
+                theme: 'defaultTheme'
+            });
+
+            return n;
+        }
+
     </script>
 
 }

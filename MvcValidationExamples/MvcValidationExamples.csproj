@@ -171,6 +171,21 @@
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\jquery.noty.js" />
+    <Content Include="Scripts\layouts\bottom.js" />
+    <Content Include="Scripts\layouts\bottomCenter.js" />
+    <Content Include="Scripts\layouts\bottomLeft.js" />
+    <Content Include="Scripts\layouts\bottomRight.js" />
+    <Content Include="Scripts\layouts\center.js" />
+    <Content Include="Scripts\layouts\centerLeft.js" />
+    <Content Include="Scripts\layouts\centerRight.js" />
+    <Content Include="Scripts\layouts\inline.js" />
+    <Content Include="Scripts\layouts\top.js" />
+    <Content Include="Scripts\layouts\topCenter.js" />
+    <Content Include="Scripts\layouts\topLeft.js" />
+    <Content Include="Scripts\layouts\topRight.js" />
+    <Content Include="Scripts\promise.js" />
+    <Content Include="Scripts\themes\default.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
