@@ -16,6 +16,7 @@
     <script src="@Url.Content("~/Scripts/jquery.noty.js")"></script>
     <script src="@Url.Content("~/Scripts/layouts/center.js")"></script>
     <script src="@Url.Content("~/Scripts/themes/default.js")"></script>
+    @Scripts.Render("~/bundles/noty")
     <script type="text/javascript">
         
         $("#notificationButton").bind("click", function (event) {
@@ -33,7 +34,7 @@
                 text: type,
                 type: type,
                 dismissQueue: false,
-                layout: 'center',
+                layout: 'top',
                 theme: 'defaultTheme'
             });
 
