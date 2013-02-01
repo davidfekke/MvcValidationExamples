@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Remote Example";
+}
+
+<h2>Remote Example</h2>
+
+<p>Call remote service</p>
+
+@Html.TextBox("myTextBox")<br />
+
+<button id="pushMe">Push Me</button>
+
+<div id="results"></div>
+
+@section ScriptSection {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#pushMe").bind("click", function () {
+                var result = $.getJSON('/Remote/getSomeText/' + $("#myTextBox").val(), function (data) {
+                    $("div#results").html(data);
+                });
+            });
+        });
+    </script>
+}
