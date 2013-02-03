@@ -12,10 +12,6 @@
 }
 
 @section ScriptSection {
-    
-    <script src="@Url.Content("~/Scripts/jquery.noty.js")"></script>
-    <script src="@Url.Content("~/Scripts/layouts/center.js")"></script>
-    <script src="@Url.Content("~/Scripts/themes/default.js")"></script>
     @Scripts.Render("~/bundles/noty")
     <script type="text/javascript">
         
@@ -23,6 +19,7 @@
             event.preventDefault();
 
             var warning = generate('warning');
+            
             $.noty.setText(warning.options.id, "Your buton was pushed!");
             setTimeout(function () {
                 $.noty.close(warning.options.id);
