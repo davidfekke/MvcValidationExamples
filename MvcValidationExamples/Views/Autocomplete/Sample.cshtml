@@ -17,6 +17,11 @@
 
 @section ScriptSection {
     <script type="text/javascript">
+        function log(message) {
+            $("<div>").text(message).prependTo("#log");
+            $("#log").scrollTop(0);
+        }
+
         $(document).ready(function () {
 
             var availableTags = [
@@ -45,7 +50,12 @@
 		    ];
 
             $("#myTextbox").autocomplete({
-                source: availableTags
+                source: availableTags,
+                select: function (event, ui) {
+                    log(ui.item ?
+                        "Selected: " + ui.item.label :
+                        "Nothing selected, input was " + this.value);
+                }
             });
 
         });
