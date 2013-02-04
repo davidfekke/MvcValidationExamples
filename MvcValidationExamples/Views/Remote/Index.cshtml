@@ -13,7 +13,9 @@
 <div id="results"></div>
 
 @section ScriptSection {
-    <script type="text/javascript">
+
+     <script type="text/javascript">
+        
         $(document).ready(function () {
             $("#pushMe").bind("click", function () {
                 var result = $.getJSON('/Remote/getSomeText/' + $("#myTextBox").val(), function (data) {
