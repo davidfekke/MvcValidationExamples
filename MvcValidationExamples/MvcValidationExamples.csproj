@@ -222,7 +222,9 @@
     <Content Include="Scripts\layouts\topRight.js" />
     <Content Include="Scripts\promise.js" />
     <Content Include="Scripts\themes\default.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
